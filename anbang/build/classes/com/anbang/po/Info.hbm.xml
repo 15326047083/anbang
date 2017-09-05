@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-12 21:31:12 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.anbang.po.Info" table="info">
+        <id name="id" type="java.lang.String">
+            <column name="ID" />
+            <generator class="uuid" />
+        </id>
+        <property name="checkType" type="java.lang.String">
+            <column name="CHECKTYPE" />
+        </property>
+        <property name="checkDept" type="java.lang.String">
+            <column name="CHECKDEPT" />
+        </property>
+        <property name="checkDeptId" type="java.lang.String">
+            <column name="CHECKDEPTID" />
+        </property>
+        <property name="checkObject" type="java.lang.String">
+            <column name="CHECKOBJECT" />
+        </property>
+        <property name="checkEP" type="java.lang.String">
+            <column name="CHECKEP" />
+        </property>
+        <property name="checkEPId" type="java.lang.String">
+            <column name="CHECKEPID" />
+        </property>
+        <property name="checkDate" type="java.util.Date">
+            <column name="CHECKDATE" />
+        </property>
+        <property name="checkStaff" type="java.lang.String">
+            <column name="CHECKSTAFF" />
+        </property>
+         <property name="checkCommit" type="integer">
+            <column name="CHECKCOMMIT" />
+        </property>
+    </class>
+</hibernate-mapping>
