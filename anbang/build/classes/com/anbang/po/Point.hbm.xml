@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-12 21:31:12 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.anbang.po.Point" table="point">
+        <id name="id" type="java.lang.String">
+            <column name="ID" />
+            <generator class="uuid" />
+        </id>
+        <property name="pointDesc" type="java.lang.String">
+            <column name="POINTDESC" />
+        </property>
+        <property name="pointType" type="boolean">
+            <column name="POINTTYPE" />
+        </property>
+        <property name="pointValue" type="int">
+            <column name="POINTVALUE" />
+        </property>
+    </class>
+</hibernate-mapping>

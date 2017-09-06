@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="js/jquery.js"></script>
+<script type="text/javascript">
+$(function(){	
+	//顶部导航切换
+	$(".nav li a").click(function(){
+		$(".nav li a.selected").removeClass("selected")
+		$(this).addClass("selected");
+	})	
+})	
+</script>
+<style type="text/css">
+    .grandFont{
+    color: white;
+    font-family: "Trebuchet MS",Lucida,Verdana,sans-serif;
+    font-weight: normal;
+    font-size:25px;
+    text-align: center;
+    padding-top: 15px;
+    
+}
+</style>
+
+
+</head>
+
+<body style="background:url(images/topbg.gif) repeat-x;">
+
+    <div class="topleft">
+   <img src="images/logo.png" title="系统首页" />
+    	
+    </div>
+
+
+            
+    <div class="topright">    
+    <ul>
+    <li><a href="user/logout.do" target="_parent">注销</a></li>
+    <li><a href="javascript:alert('版本：A2017.0.1')">版本</a></li>
+    <li><a href="javascript:alert('本软件数据用作政府监管参考，掌握企业生产安全状态及趋势，辅助指导监管部门的监管重点。任何单位或个人不得在未经许可下进行功能修改和反编译，本公司保留追究其法律责任的权利。')">声明</a></li>
+    
+    </ul>
+
+        
+	</div>
+            
+  
+
+</body>
+</html>

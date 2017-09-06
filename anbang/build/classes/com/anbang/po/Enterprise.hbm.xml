@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-25 21:18:02 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.anbang.po.Enterprise" table="enterprise">
+        <id name="id" type="java.lang.String">
+            <column name="ID" />
+            <generator class="uuid" />
+        </id>
+        <property name="ename" type="java.lang.String">
+            <column name="ENAME" />
+        </property>
+        <property name="ecode" type="java.lang.String">
+            <column name="ECODE" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS" />
+        </property>
+        <property name="etype" type="java.lang.String">
+            <column name="ETYPE" />
+        </property>
+        <property name="corporation" type="java.lang.String">
+            <column name="CORPORATION" />
+        </property>
+        <property name="tel" type="java.lang.String">
+            <column name="TELL" />
+        </property>
+        <property name="fax" type="java.lang.String">
+            <column name="FAXX" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" />
+        </property>
+        <property name="permision" type="java.lang.String">
+            <column name="PERMI" />
+        </property>
+        <property name="count" type="java.lang.String">
+            <column name="COUNTT" />
+        </property>
+        <property name="desc" type="java.lang.String">
+            <column name="DESCRIPTION" />
+        </property>
+        <property name="especial" type="java.lang.String">
+            <column name="ESPECIAL" />
+        </property>
+        <property name="deptId" type="java.lang.String">
+            <column name="DEPT_ID" />
+        </property>
+        <property name="areaId" type="java.lang.String">
+            <column name="AREA_ID" />
+        </property>
+        <property name="leaderCount" type="int">
+            <column name="LEADERCOUNT" />
+        </property>
+        <property name="middleCount" type="int">
+            <column name="MIDDLECOUNT" />
+        </property>
+        <property name="safetyCount" type="int">
+            <column name="SAFETYCOUNT" />
+        </property>
+        <property name="techCount" type="int">
+            <column name="TECHCOUNT" />
+        </property>
+        <property name="worker" type="int">
+            <column name="WORKER" />
+        </property>
+        <property name="liveWorker" type="int">
+            <column name="LIVEWORKER" />
+        </property>
+    </class>
+</hibernate-mapping>

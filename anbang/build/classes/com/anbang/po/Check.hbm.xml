@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-30 17:12:21 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.anbang.po.Check" table="checkk">
+        <id name="id" type="java.lang.String">
+            <column name="ID" />
+            <generator class="uuid" />
+        </id>
+        <property name="infoId" type="java.lang.String">
+            <column name="INFOID" />
+        </property>
+        <property name="itemId" type="java.lang.String">
+            <column name="ITEMID" />
+        </property>
+        <property name="unitId" type="java.lang.String">
+            <column name="UNITID" />
+        </property>
+        <property name="result" type="java.lang.String">
+            <column name="RESULT" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS" />
+        </property>
+        <property name="live" type="text">
+            <column name="LIVEE"/>
+        </property>
+        <property name="score" type="int">
+            <column name="SCORE" />
+        </property>
+        <property name="checkType" type="java.lang.String">
+            <column name="CHECKTYPE" />
+        </property>
+        <property name="toZero" type="int">
+            <column name="TOZERO" />
+        </property>
+
+    </class>
+</hibernate-mapping>
