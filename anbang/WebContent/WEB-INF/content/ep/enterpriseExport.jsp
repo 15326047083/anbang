@@ -72,7 +72,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</tr>
 				<tr>
 					<th>所属区域</th>
-				
 					<td>${ep.area}</td>
 				
 				</tr>
