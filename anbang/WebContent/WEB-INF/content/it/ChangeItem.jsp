@@ -42,6 +42,12 @@ $(document).ready(function(e) {
 	$(".select3").uedSelect({
 		width : 100
 	});
+	$("#export").click(function(){
+		window.location.href = 'item/exportSingleItem.do?id=${itemId}';
+	});
+	$("#backups").click(function(){
+		window.location.href = 'item/backupsSingleItem.do?itemid=${itemId}';
+	});
 });
 $(document).ready(function() {
 	$(".btn").click(function() {
@@ -59,7 +65,6 @@ $(document).ready(function() {
 <br>
 <ul class = "forminfo">
 <form:form action="item/update.do" method="post" commandName="it">
-
  <form:input path="unitId" name="" type="hidden" cssClass="dfinput" style="width:518px;"/>
  <form:input path="id" name="" type="hidden" cssClass="dfinput" style="width:518px;"/>
         <li><label>编号<b>*</b></label>
@@ -85,7 +90,10 @@ $(document).ready(function() {
 	    
     <li>
     <label>&nbsp;</label><input name="" type="submit" class="btn" value="修改"/>
-    <label>&nbsp;</label><input name="" type="button" class="btn" value="返回"></li>
+    <label>&nbsp;</label><input name="" type="button" class="btn" value="返回">
+    <label>&nbsp;</label><input name="" type="button" class="click" id="export" value="导出">
+    <label>&nbsp;</label><input name="" type="button" class="click" id="backups" value="备份">
+    </li>
  </form:form>
 		</ul>
 </body>

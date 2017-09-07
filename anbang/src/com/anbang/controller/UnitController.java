@@ -3,6 +3,7 @@ package com.anbang.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,9 @@ import com.anbang.po.Item;
 import com.anbang.po.PageModel;
 import com.anbang.po.Unit;
 import com.anbang.service.IUnitService;
+import com.anbang.tools.ExportExcelUtil;
+import com.anbang.tools.titleTools;
+
 
 @Controller
 @RequestMapping("/unit")
@@ -102,7 +106,7 @@ public class UnitController {
 		this.epId=epId;
 		return mav;
 	}
-	
+
 	@RequestMapping("/updateKiAndScore.do")
 	public String updateKiAndScore(HttpServletRequest request){
 		String [] ids = request.getParameterValues("ids");
@@ -118,5 +122,42 @@ public class UnitController {
 		return "redirect:toScoreList.do?epId="+epId;
 		
 	}
-	
+	/**
+	 * 导出Excel
+	 * @param offset
+	 * @return
+	 */
+	@RequestMapping("/exportUnit.do")
+	public ModelAndView exportUnit(@RequestParam("epId") String epId,HttpServletRequest request, HttpServletResponse response){
+		ModelAndView mav = new ModelAndView("/unit/UnitList");
+		List<Unit> list = utService.getAllUnitByEpId(epId);
+		String []title = titleTools.unit;
+		ExportExcelUtil eeu = new ExportExcelUtil();
+		try {
+			eeu.export(response, "检查单元表", title, list);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return mav;
+	}
+	/**
+	 * 备份Excel
+	 * @param offset
+	 * @return
+	 */
+	@RequestMapping("/backupsUnit.do")
+	public ModelAndView backupsUnit(@RequestParam("epId") String epId,HttpServletRequest request, HttpServletResponse response){
+		ModelAndView mav = new ModelAndView("/unit/UnitList");
+		List<Unit> list = utService.getAllUnitByEpId(epId);
+		String []title = titleTools.unitBackups;
+		ExportExcelUtil eeu = new ExportExcelUtil();
+		try {
+			eeu.export(response, "检查单元表", title, list);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return mav;
+	}
 }

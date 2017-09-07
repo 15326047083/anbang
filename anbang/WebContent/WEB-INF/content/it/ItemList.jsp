@@ -24,6 +24,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$("#returnA").click(function() {
 			window.history.go(-1);
 		});
+		$("#export").click(function(){
+			window.location.href = 'item/exportItem.do?unitId=${requestScope.unitId}';
+		});
+		$("#backups").click(function(){
+			window.location.href = 'item/backupsItem.do?unitId=${requestScope.unitId}';
+		});
 	});
 </script>
 
@@ -41,6 +47,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				
 				<li class="click"><span><img src="images/t01.png"  /></span>添加</li>
 				<li class="click" id="returnA"><span></span>返回</li>
+				<li class="click" id="export"><span></span>导出</li>
+				<li class="click" id="backups"><span></span>备份</li>
 			</ul>
 
 
