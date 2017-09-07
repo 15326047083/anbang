@@ -9,18 +9,35 @@ public class Item implements Serializable{
 	 */
 	private static final long serialVersionUID = -1422223383023119873L;
 	private String id;
+	/**
+	 * 检查类型
+	 */
 	private String itemType;
+	/**
+	 * 检查内容
+	 */
 	private String itemContent;
+	/**
+	 * 检查依据
+	 */
 	private String itemLaw;
+	/**
+	 * 编号
+	 */
 	private String itemNum;
 	private String unitId;
+	/**
+	 * 分数
+	 */
 	private int itemScore;
 	/**
 	 * 是否过期，过期1，否则为0
+	 * 状态
 	 */
 	private int expire;
 	/**
 	 * 全局否决项，是全局否决项为1，否则为0
+	 * 是否否决
 	 */
 	private int toNone;
 
