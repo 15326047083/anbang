@@ -36,8 +36,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="rightinfo">
 
 		<div class="tools">
+
 			<ul class="toolbar">
-				
+				<a href="#" ><li class="click"><span><img src="images/excel_exp.png" /></span>导出</li></a>
 				<li class="click" id="new"><span><img src="images/t01.png"  /></span>添加</li>
 				<li class="click" id="returnA"><span></span>返回</li>
 			</ul>
