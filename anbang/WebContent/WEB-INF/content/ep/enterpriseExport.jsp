@@ -41,7 +41,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<th>企业名称</th><td>${ep.ename}</td>
 				</tr>
 				<tr>
-					<th>统一信用代码</th><td>${ep.ecode}</td>
+				
+					<th>统一信用代码</th><td>&nbsp;${ep.ecode}</td>
 				</tr>
 				<tr>
 					<th>地址</th><td>${ep.address}</td>
@@ -72,6 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</tr>
 				<tr>
 					<th>所属区域</th>
+				
 					<td>${ep.area}</td>
 				
 				</tr>

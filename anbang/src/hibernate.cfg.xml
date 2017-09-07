@@ -6,20 +6,21 @@
   <!-- 基本信息 -->
  
  
-   <!--<property name="hibernate.connection.driver_class">org.apache.derby.jdbc.EmbeddedDriver</property>
+  <!-- <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.EmbeddedDriver</property>
    <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
-   <property name="hibernate.connection.url">jdbc:derby:c:/anbang;</property> -->
+   <property name="hibernate.connection.url">jdbc:derby:c:/anbang;</property>-->
    
    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-  <!-- <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/anbang?useUnicode=true&amp;characterEncoding=utf8</property>-->
+  <!--  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/anbang?useUnicode=true&amp;characterEncoding=utf8</property>-->
+     <property name="hibernate.connection.url">jdbc:mysql://182.92.234.151:3306/anbang?useUnicode=true&amp;characterEncoding=utf8</property>
    
   <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
   
-   <property name="hibernate.connection.url">jdbc:mysql://182.92.234.151:3306/anbang?useUnicode=true&amp;characterEncoding=utf8</property>
+
   
   <property name="hibernate.connection.username">root</property>
- <property name="hibernate.connection.password">mysql</property>
- <!-- <property name="hibernate.connection.password">123456</property> -->
+  <property name="hibernate.connection.password">mysql</property>
+ <!--<property name="hibernate.connection.password">123456</property> -->
   <!-- 使事务自动提交 -->
   <property name="hibernate.connection.autocommit">true</property>
   <!-- 配置 -->

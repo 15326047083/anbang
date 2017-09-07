@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -41,7 +42,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      </tr>
 
       <tr>
-	    <td colspan=2> ${info.checkDate}   </td>
+	    <td colspan=2>  <fmt:formatDate value="${info.checkDate}" dateStyle="full" /></td>
        	<td colspan=2>${info.checkDept} </td>
         <td>${info.checkType}</td>
         <td>${info.checkStaff}</td>

@@ -35,16 +35,17 @@
 	
 	<div class="rightinfo">
 	
-	<c:if test="${sessionScope.user.userType ne 'dept'}">
+	
 	<div class="tools">
 			<ul class="toolbar">
-			
+			<c:if test="${sessionScope.user.userType ne 'dept'}">
 				<li class="clickA"><span><img src="images/t01.png"  /></span>添加</li>
+				</c:if>
 				 <a download="checktable.xls" href="#" onclick="return ExcellentExport.excel(this, 'datatable', 'Sheet Name Here');"><li class="click"><span><img src="images/excel_exp.png"/></span> 
 			导出</li></a>
 			</ul>
 				</div>
-</c:if>
+
 
 
 	
