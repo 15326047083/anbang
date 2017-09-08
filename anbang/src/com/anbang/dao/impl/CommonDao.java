@@ -14,6 +14,7 @@ import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.anbang.dao.ICommonDao;
+import com.anbang.po.Item;
 
 public class CommonDao<T> extends HibernateDaoSupport implements ICommonDao<T> {
 	protected Class<T> entity;
@@ -111,5 +112,6 @@ public class CommonDao<T> extends HibernateDaoSupport implements ICommonDao<T> {
 		getHibernateTemplate().saveOrUpdate(t);
 		
 	}
+
 
 }

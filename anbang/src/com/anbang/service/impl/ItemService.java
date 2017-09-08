@@ -28,4 +28,11 @@ public class ItemService extends CommonService<Item>implements IItemService {
 		// TODO Auto-generated method stub
 		return ((IItemDao)dao).queryNoExpireByUnitId(unitId);
 		}
+	
+	@Override
+	public List<Item> queryAllItemByUnitId(String unitId) {
+		// TODO Auto-generated method stub
+		return ((IItemDao)dao).queryAllItemByUnitId(unitId);
+	}
+
 }

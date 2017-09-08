@@ -52,6 +52,22 @@ public class Item implements Serializable{
 		this.expire=expire;
 		
 	}
+	
+	
+	public Item(String id, String itemNum, int itemScore,int expire, int toNone, String itemContent, String itemType, String itemLaw,
+			 String unitId) {
+		super();
+		this.id = id;
+		this.itemType = itemType;
+		this.itemContent = itemContent;
+		this.itemLaw = itemLaw;
+		this.itemNum = itemNum;
+		this.unitId = unitId;
+		this.itemScore = itemScore;
+		this.expire = expire;
+		this.toNone = toNone;
+	}
+
 	public String getId() {
 		return id;
 	}

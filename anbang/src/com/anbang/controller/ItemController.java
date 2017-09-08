@@ -121,7 +121,7 @@ public class ItemController {
 	@RequestMapping("/exportItem.do")
 	public ModelAndView exportUnit(@RequestParam("unitId") String unitId,HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mav = new ModelAndView("/it/ItemList");
-		List<Item> list = itService.queryAllByUnitId(unitId);
+		List<Item> list = itService.queryAllItemByUnitId(unitId);
 		String []title = titleTools.itemMenu;
 		ExportExcelUtil eeu = new ExportExcelUtil();
 		try {
@@ -140,11 +140,11 @@ public class ItemController {
 	@RequestMapping("/backupsItem.do")
 	public ModelAndView backupsUnit(@RequestParam("unitId") String unitId,HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mav = new ModelAndView("/it/temList");
-		List<Item> list = itService.queryAllByUnitId(unitId);
+		List<Item> list = itService.queryAllItemByUnitId(unitId);
 		String []title = titleTools.itemMenuBackups;
 		ExportExcelUtil eeu = new ExportExcelUtil();
 		try {
-			eeu.export(response, "检查单元条目表", title, list);
+			eeu.export(response, "检查单元条目表(备份)", title, list);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

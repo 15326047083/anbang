@@ -65,7 +65,6 @@ public class ItemDao extends CommonDao<Item> implements IItemDao {
 		});
 	
 	}
-
 	@Override
 	public long getItemCount(final List<String> unitId) {
 		// TODO Auto-generated method stub
@@ -95,6 +94,18 @@ public class ItemDao extends CommonDao<Item> implements IItemDao {
 		});
 	}
 
-	
+	@Override
+	public List<Item> queryAllItemByUnitId(final String unitId) {
+		return getHibernateTemplate().executeFind(new HibernateCallback<List<Item>>() {
+
+			@Override
+			public List<Item> doInHibernate(Session arg0) throws HibernateException, SQLException {
+				// TODO Auto-generated method stub
+				Query q = arg0.createQuery("select new Item(id,itemNum,itemScore,expire,toNone,itemContent,itemType,itemLaw,unitId) from Item i where i.unitId=(:unitId)");
+				q.setParameter("unitId", unitId);
+				return q.list();
+			}
+		});
+	}
 
 }
