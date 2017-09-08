@@ -2,6 +2,7 @@ package com.anbang.dao.impl;
 
 import java.io.Serializable;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.HibernateException;
@@ -82,6 +83,27 @@ public class InfoDao extends CommonDao<Info> implements IInfoDao {
 		else
 			hql= "select count(i.id) from Info i where i.checkDeptId is null and i.checkEPId= '"+epId+"'";
 		return ((Long)getHibernateTemplate().iterate(hql).next()).longValue();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Info> queryAllByCheckIdAndDate(final String checkDeptId, final Date start,final Date end) {
+		// TODO Auto-generated method stub
+		return getHibernateTemplate().executeFind(new HibernateCallback<List<Info>>(){
+
+			@Override
+			public List<Info> doInHibernate(Session arg0) throws HibernateException, SQLException {
+				String hql="from Info i where i.checkDeptId=(:checkDeptId) and i.checkDate>=(:start) and i.checkDate<=(:end)";
+				Query q;
+				q = arg0.createQuery(hql);
+				q.setParameter("checkDeptId", checkDeptId);
+				q.setParameter("start", start);
+				q.setParameter("end", end);
+				// TODO Auto-generated method stub
+				return q.list();
+			}
+			
+		});
 	}
 	
 	

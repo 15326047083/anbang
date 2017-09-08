@@ -1,5 +1,6 @@
 package com.anbang.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import com.anbang.po.Check;
@@ -62,7 +63,16 @@ public interface ICheckDao extends ICommonDao<Check>{
 	 * @return
 	 */
 	public Object[] getCheckVo(String id);
-	
+	/**
+	 * 通过一段时间得到所有check的信息
+	 * @param infoId
+	 * @param start
+	 * @param end
+	 * @return
+	 */
 
+	List<Check> queryAllByDeptIdAndDate(List<String> infoIds);
 	
+	public List<String> getIdByDate(Date start,Date end);
+
 }

@@ -1,6 +1,7 @@
 package com.anbang.service.impl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -173,6 +174,15 @@ public class CheckService extends CommonService<Check>implements ICheckService {
 			unitIds.add(u.getId());
 		}
 		return itemDao.getItemCount(unitIds);
+	}
+
+	@Override
+	public List<Check> queryAllByDeptIdAndDate(Date start, Date end) {
+		// TODO Auto-generated method stub
+		List<Check> check = new ArrayList<Check>();
+		List<String> id = ((ICheckDao)dao).getIdByDate(start, end);
+		check = ((ICheckDao)dao).queryAllByDeptIdAndDate(id);
+		return check;
 	}
 
 

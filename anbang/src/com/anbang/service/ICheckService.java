@@ -1,5 +1,6 @@
 package com.anbang.service;
 
+import java.util.Date;
 import java.util.List;
 
 import com.anbang.po.Check;
@@ -21,5 +22,12 @@ public interface ICheckService extends ICommonService<Check> {
 	public List<CheckVo> queryCheckByCheckIds(String [] ids);
 	public Long countCheckByEpid(String epId);
 	public Long countCheckByEpid2(String epId);
+	/**
+	 * 根据时间获取所有的check表值
+	 * @param start
+	 * @param end
+	 * @return
+	 */
+	public List<Check> queryAllByDeptIdAndDate(Date start,Date end);
 	
 }

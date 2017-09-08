@@ -1,5 +1,6 @@
 package com.anbang.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +35,12 @@ public class InfoService extends CommonService<Info>implements IInfoService {
 	public Long count(String deptId, String epId) {
 		// TODO Auto-generated method stub
 		return  ((IInfoDao)dao).count(deptId, epId);
+	}
+
+	@Override
+	public List<Info> queryAllByCheckIdAndDate(String checkDeptId, Date start,
+			Date end) {
+		// TODO Auto-generated method stub
+		return ((IInfoDao)dao).queryAllByCheckIdAndDate(checkDeptId, start, end);
 	}
 }

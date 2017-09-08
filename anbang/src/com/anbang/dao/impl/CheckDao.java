@@ -2,6 +2,7 @@ package com.anbang.dao.impl;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.HibernateException;
@@ -169,6 +170,41 @@ public class CheckDao extends CommonDao<Check> implements ICheckDao {
 				Query q = arg0.createQuery("select it.itemNum,it.itemContent,it.itemLaw,c.live,c.status,c.result  from Check c,Item it where it.id=c.itemId and c.id=(:id)");
 				q.setParameter("id", id);
 				return (Object[]) q.uniqueResult();
+			}
+		});
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Check> queryAllByDeptIdAndDate(final List<String> infoIds) {
+		// TODO Auto-generated method stub
+		return getHibernateTemplate().executeFind(new HibernateCallback<List<Check>>() {
+
+			@Override
+			public List<Check> doInHibernate(Session arg0) throws HibernateException, SQLException {
+				// TODO Auto-generated method stub
+				String hql = "from Check c where c.infoId in (:infoIds)";
+				Query q =arg0.createQuery(hql);
+				q.setParameterList("infoIds", infoIds);
+				return q.list();
+			}
+		});
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<String> getIdByDate(final Date start, final Date end) {
+		// TODO Auto-generated method stub
+		return getHibernateTemplate().executeFind(new HibernateCallback<List<String>>() {
+
+			@Override
+			public List<String> doInHibernate(Session arg0) throws HibernateException, SQLException {
+				// TODO Auto-generated method stub
+				String hql = "select id from Info i where i.checkDate>=(:start) and i.checkDate<=(:end)";
+				Query q =arg0.createQuery(hql);
+				q.setParameter("start", start);
+				q.setParameter("end", end);
+				return q.list();
 			}
 		});
 	}

@@ -1,10 +1,13 @@
 package com.anbang.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +33,8 @@ import com.anbang.service.IInfoService;
 import com.anbang.service.IItemService;
 import com.anbang.service.IStaffService;
 import com.anbang.service.IUnitService;
+import com.anbang.tools.ExportExcelUtil;
+import com.anbang.tools.titleTools;
 import com.anbang.vo.CheckVo;
 
 
@@ -250,7 +255,70 @@ public class CheckController {
 			return true;
 		return false;
 	}
-	
+	/**
+	 * 备份全部Excel
+	 * @param offset
+	 * @return
+	 * @throws ParseException 
+	 */
+	@RequestMapping("/backupsInfo.do")
+	public ModelAndView backupsInfo(@RequestParam("deptId") String deptId,HttpServletRequest request, HttpServletResponse response){
+		ModelAndView mav = new ModelAndView("/check/checkList");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String s = "1997-03-15";
+		String e1 = "3000-03-15";
+		Date start = null;
+		Date end = null;
+		try {
+			start = sdf.parse(s);
+			 end = sdf.parse(e1);
+		} catch (ParseException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		List<Info> list = infoService.queryAllByCheckIdAndDate(deptId, start, end);
+		String []title = titleTools.infoBackups;
+		ExportExcelUtil eeu = new ExportExcelUtil();
+		try {
+			eeu.export(response, "info表(备份)", title, list);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return mav;
+	}
+	/**
+	 * 备份全部Excel
+	 * @param offset
+	 * @return
+	 * @throws ParseException 
+	 */
+	@RequestMapping("/backupsCheck.do")
+	public ModelAndView backupsCheck(@RequestParam("deptId") String deptId,HttpServletRequest request, HttpServletResponse response){
+		ModelAndView mav = new ModelAndView("/check/checkList");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String s = "1997-03-15";
+		String e1 = "3000-03-15";
+		Date start = null;
+		Date end = null;
+		try {
+			start = sdf.parse(s);
+			 end = sdf.parse(e1);
+		} catch (ParseException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		List<Check> check = checkService.queryAllByDeptIdAndDate(start, end);
+		String []title = titleTools.checkBackups;
+		ExportExcelUtil eeu = new ExportExcelUtil();
+		try {
+			eeu.export(response, "check表(备份)", title, check);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return mav;
+	}
 
 	
 }

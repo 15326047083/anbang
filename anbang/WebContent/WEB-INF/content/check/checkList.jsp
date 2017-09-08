@@ -19,6 +19,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$(".click").click(function() {
 			window.location.href = 'check/toSaveInfo.do?deptId=${sessionScope.user.deptId}';
 		});
+		$(".backups").click(function() {
+			window.location.href = 'check/backupsInfo.do?deptId=${sessionScope.user.deptId}';
+		});
+		$(".backups2").click(function() {
+			window.location.href = 'check/backupsCheck.do?deptId=${sessionScope.user.deptId}';
+		});
 	});
 </script>
 
@@ -34,7 +40,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 			<ul class="toolbar">
 				<li class="click"><span><img src="images/t01.png"  /></span>添加</li>
-
+				<li class="backups"><span><img src="images/t01.png"  /></span>备份信息</li>
+				<li class="backups2"><span><img src="images/t01.png"  /></span>备份检查</li>
+				
 			</ul>
 
 
