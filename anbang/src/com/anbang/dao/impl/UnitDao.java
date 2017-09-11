@@ -54,6 +54,12 @@ public class UnitDao extends CommonDao<Unit> implements IUnitDao {
 		}
 	}
 
+	@Override
+	public void saveOrUpdate(List<Unit> importList) {
+		// TODO Auto-generated method stub
+		getHibernateTemplate().saveOrUpdateAll(importList);
+	}
+
 	
 	
 

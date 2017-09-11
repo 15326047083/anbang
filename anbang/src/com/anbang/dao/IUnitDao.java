@@ -16,6 +16,9 @@ public interface IUnitDao extends ICommonDao<Unit> {
 	public List<Unit> getUnitByEpid(String epId);
 	
 	public void updateAllScore(String [] ids,double [] kis,int [] scores);
-
-	
+	/**
+	 * 保存或更新，回复unit文件
+	 * @param importList
+	 */
+	public void saveOrUpdate(List<Unit> importList);
 }

@@ -108,4 +108,24 @@ public class ItemDao extends CommonDao<Item> implements IItemDao {
 		});
 	}
 
+	@Override
+	public void saveOrUpdate(List<Item> importList, String unitId) {
+		// TODO Auto-generated method stub
+		for(int i=0;i<importList.size();i++){
+			Item it = importList.get(i);
+			String id = it.getUnitId();
+			if(id.equals("")){
+				it.setUnitId(unitId);
+				getHibernateTemplate().saveOrUpdate(it);
+			}else{
+				if(id.equals(unitId)){
+					getHibernateTemplate().saveOrUpdate(it);
+				}else{
+					
+				}
+			}
+		}
+		
+	}
+
 }

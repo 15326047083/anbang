@@ -23,6 +23,13 @@ public interface IItemDao extends ICommonDao<Item>{
 	public List<Item> queryNoExpireByUnitId(String unitId);
 	public long getItemCount(List<String> unitId);
 	List<Item> queryAllItemByUnitId(String unitId);
+	/**
+	 * 保存或修改恢复item表
+	 * @param importList
+	 * @param unitId
+	 */
+	public void saveOrUpdate(List<Item> importList,String unitId);
 	
+
 	
 }

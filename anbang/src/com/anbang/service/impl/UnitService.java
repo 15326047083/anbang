@@ -29,4 +29,12 @@ public class UnitService extends CommonService<Unit>implements IUnitService {
 		((IUnitDao)dao).updateAllScore(ids, kis,scores);
 		
 	}
+
+	@Override
+	public void saveOrUpdate(List<Unit> importList) {
+		// TODO Auto-generated method stub
+		((IUnitDao)dao).saveOrUpdate(importList);
+	}
+	
+	
 }
