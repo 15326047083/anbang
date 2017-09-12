@@ -1,10 +1,13 @@
 package com.anbang.controller;
 
+import java.io.File;
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.tomcat.util.http.fileupload.FileItem;
+import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
+import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -158,6 +161,18 @@ public class UnitController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return mav;
+	}
+	/**
+	 * 恢复单元列表
+	 * @return
+	 */
+	@RequestMapping(value="/setUnit.do", method=RequestMethod.POST)
+	public ModelAndView setUnit(HttpServletRequest request, HttpServletResponse response){
+		//得到上传文件的保存目录，将上传的文件存放于WEB-INF目录下，不允许外界直接访问，保证上传文件的安全
+		ModelAndView mav = new ModelAndView("/unit/fileset");
+		String address=request.getParameter("fileBrowser");
+		System.out.println(address);
 		return mav;
 	}
 }

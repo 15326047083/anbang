@@ -31,8 +31,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			window.location.href = 'unit/backupsUnit.do?epId=${requestScope.epId}';
 		});
 	});
-	
+
 </script>
+
 
 </head>
 
@@ -50,9 +51,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li class="click" id="export"><span></span>导出</li>
 				<li class="click" id="backups"><span></span>备份</li>
 			</ul>
-
-
-
+			
+			
+	<form action="unit/setUnit.do" method="post" name="form1" enctype="multipart/form-data">
+		<input type="file" name="fileBrowser" onchange="readFile(this)"/>
+		<input type="submit" value="上传"/>
+	</form>
+	
+	
 		</div>
 		<table class="tablelist">
 			<thead>
@@ -116,6 +122,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$('.tablelist tbody tr:odd').addClass('odd');
 	</script>
 
+	<script type="text/javascript">  
+      function readFile(fileBrowser) {
+    	  if (navigator.userAgent.indexOf("MSIE")!=-1) {
+    		  readFileIE(fileBrowser); 
+    		  } 
+    	  else if (navigator.userAgent.indexOf("Firefox")!=-1|| navigator.userAgent.indexOf("Mozilla")!=-1){
+    		  readFileFirefox(fileBrowser);  
+    		  } 
+    	  else { 
+    		  return;  
+    		  }
+    	  }
+    
+     function readFileFirefox(fileBrowser) {  
+       var fileName=fileBrowser.value;
+       alert(fileName);
+    }
+   </script>
 </body>
 
 </html>

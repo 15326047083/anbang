@@ -50,7 +50,6 @@ $(document).ready(function(e) {
 		<form:input path="itemNum" name="" type="text" class="dfinput" value=" "  style="width:518px;"/></li>
 			<li><label>检查内容<b>*</b></label>
 		<form:input path="itemContent" name="" type="text" class="dfinput" value=" "  style="width:518px;"/></li>
-		
 			<li><label>检查依据<b>*</b></label>
 		<form:input path="itemLaw" name="" type="text" class="dfinput" value=" "  style="width:518px;"/></li>
 			<li><label>分数<b>*</b></label>
