@@ -8,4 +8,5 @@ public interface IItemService extends ICommonService<Item> {
 	public List<Item> queryAllByUnitId(String unitId);
 	public List<Item> queryAllNoExpireUnitId(String unitId);
 	List<Item> queryAllItemByUnitId(String unitId);
+	void saveOrUpdate(List<Item> importList,String unitId);
 }

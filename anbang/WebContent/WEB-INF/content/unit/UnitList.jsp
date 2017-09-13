@@ -54,10 +54,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 			
 	<form action="unit/setUnit.do" method="post" name="form1" enctype="multipart/form-data">
-		<input type="file" name="fileBrowser" onchange="readFile(this)"/>
-		<input type="submit" value="上传"/>
+		<input type="file" name="file" />
+		<input type="submit" class="click" value="上传"/>
 	</form>
-	
 	
 		</div>
 		<table class="tablelist">

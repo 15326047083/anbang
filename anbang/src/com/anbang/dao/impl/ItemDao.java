@@ -80,6 +80,7 @@ public class ItemDao extends CommonDao<Item> implements IItemDao {
 		});
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Item> queryNoExpireByUnitId(final String unitId) {
 		return getHibernateTemplate().executeFind(new HibernateCallback<List<Item>>() {
@@ -94,6 +95,7 @@ public class ItemDao extends CommonDao<Item> implements IItemDao {
 		});
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Item> queryAllItemByUnitId(final String unitId) {
 		return getHibernateTemplate().executeFind(new HibernateCallback<List<Item>>() {

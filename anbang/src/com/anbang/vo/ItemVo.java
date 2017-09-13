@@ -1,72 +1,49 @@
-package com.anbang.po;
+package com.anbang.vo;
 
-import java.io.Serializable;
+import com.anbang.tools.ExcelVOAttribute;
 
-public class Item implements Serializable{
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -1422223383023119873L;
+public class ItemVo {
+	@ExcelVOAttribute(name = "id", column = "A")
 	private String id;
 	/**
 	 * 检查类型
 	 */
+	@ExcelVOAttribute(name = "检查类型", column = "G")
 	private String itemType;
 	/**
 	 * 检查内容
 	 */
+	@ExcelVOAttribute(name = "检查内容", column = "F")
 	private String itemContent;
 	/**
 	 * 检查依据
 	 */
+	@ExcelVOAttribute(name = "检查依据", column = "H")
 	private String itemLaw;
 	/**
 	 * 编号
 	 */
+	@ExcelVOAttribute(name = "编号", column = "B")
 	private String itemNum;
+	@ExcelVOAttribute(name = "unitId", column = "I")
 	private String unitId;
 	/**
 	 * 分数
 	 */
+	@ExcelVOAttribute(name = "分数", column = "C")
 	private int itemScore;
 	/**
 	 * 是否过期，过期1，否则为0
 	 * 状态
 	 */
+	@ExcelVOAttribute(name = "状态", column = "D")
 	private int expire;
 	/**
 	 * 全局否决项，是全局否决项为1，否则为0
 	 * 是否否决
 	 */
+	@ExcelVOAttribute(name = "是否否决", column = "E")
 	private int toNone;
-
-	
-	public Item(){}
-	
-	public Item(String id, String itemNum,int itemScore,int expire) {
-		super();
-		this.id = id;
-		this.itemNum = itemNum;
-		this.itemScore=itemScore;
-		this.expire=expire;
-		
-	}
-	
-	public Item(String id, String itemNum, int itemScore,int expire, int toNone, String itemContent, String itemType, String itemLaw,
-			 String unitId) {
-		super();
-		this.id = id;
-		this.itemType = itemType;
-		this.itemContent = itemContent;
-		this.itemLaw = itemLaw;
-		this.itemNum = itemNum;
-		this.unitId = unitId;
-		this.itemScore = itemScore;
-		this.expire = expire;
-		this.toNone = toNone;
-	}
-
 	public String getId() {
 		return id;
 	}
@@ -91,8 +68,6 @@ public class Item implements Serializable{
 	public void setItemLaw(String itemLaw) {
 		this.itemLaw = itemLaw;
 	}
-
-	
 	public String getItemNum() {
 		return itemNum;
 	}
@@ -111,27 +86,17 @@ public class Item implements Serializable{
 	public void setItemScore(int itemScore) {
 		this.itemScore = itemScore;
 	}
-
+	public int getExpire() {
+		return expire;
+	}
+	public void setExpire(int expire) {
+		this.expire = expire;
+	}
 	public int getToNone() {
 		return toNone;
 	}
-
 	public void setToNone(int toNone) {
 		this.toNone = toNone;
 	}
 
-	public int getExpire() {
-		return expire;
-	}
-
-	public void setExpire(int expire) {
-		this.expire = expire;
-	}
-
-
-	
-	
-
-	
-	
 }

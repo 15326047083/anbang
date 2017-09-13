@@ -34,5 +34,14 @@
         </list>
         </property>
     </bean>
+        <bean id="multipartResolver"   class="org.springframework.web.multipart.commons.CommonsMultipartResolver">    
+            <!-- 设置上传文件的最大尺寸为10MB -->    
+            <property name="maxUploadSize">    
+                <value>1048576000</value>    
+            </property>    
+                <property name="maxInMemorySize">  
+                <value>1024</value>  
+            </property>  
+        </bean>   
 
 </beans>               

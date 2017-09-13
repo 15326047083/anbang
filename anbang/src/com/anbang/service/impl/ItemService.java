@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.anbang.dao.IItemDao;
+import com.anbang.dao.IUnitDao;
 import com.anbang.po.Item;
 import com.anbang.service.IItemService;
 
@@ -35,4 +36,11 @@ public class ItemService extends CommonService<Item>implements IItemService {
 		return ((IItemDao)dao).queryAllItemByUnitId(unitId);
 	}
 
+	@Override
+	public void saveOrUpdate(List<Item> importList, String unitId) {
+		// TODO Auto-generated method stub
+		((IItemDao)dao).saveOrUpdate(importList,unitId);
+	}
+
+	
 }

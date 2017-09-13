@@ -49,10 +49,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li class="click" id="returnA"><span></span>返回</li>
 				<li class="click" id="export"><span></span>导出</li>
 				<li class="click" id="backups"><span></span>备份</li>
+				<li>
+					<form action="item/setItem.do?unitId=${requestScope.unitId}" method="post" name="form1" enctype="multipart/form-data">
+						<input type="file" name="file" />
+						<input type="submit" class="click" value="上传"/>
+					</form>
+				</li>
 			</ul>
-
-
-
 		</div>
 		<table class="tablelist">
 			<thead>

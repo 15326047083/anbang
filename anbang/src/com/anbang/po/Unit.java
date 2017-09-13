@@ -44,6 +44,15 @@ public class Unit implements Serializable{
 		this.score = score;
 		this.ki = ki;
 	}
+	public Unit(String id,String unitNum,String unitName,int score,double ki,String epid){
+		super();
+		this.id = id;
+		this.unitNum=unitNum;
+		this.unitName=unitName;
+		this.score=score;
+		this.ki=ki;
+		this.epid=epid;
+	}
 	public String getId() {
 		return id;
 	}
